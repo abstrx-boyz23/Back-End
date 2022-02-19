@@ -1,0 +1,65 @@
+
+<!-- =============== WEB_PROGRAMMING_UNPAS ================= -->
+    <!-- ========= Tagged Template Literals ========== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css" media="all">
+    .hl {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <script>
+
+const nama = 'Afifudin Nurfalah';
+const umur = 17;
+const sekolah = 'SMA Negeri 5 Tegal';
+
+// 1. Versi Repot
+// function tes(teks,name,age,contoh) {
+//   return `${name} dan ${age} - ${contoh}`;
+// }
+
+// 2. Rest Parameter
+// function tes(teks, ...expression) {
+//   // return expression;
+//   return `${expression[0]} dan ${expression[1]} - ${expression[2]}`;
+// }
+
+// 3. .forEach() vs .reduce()
+function tes(teks, ...expression) {
+  // .forEach()
+  // let hasil = '';
+  // teks.forEach((string, i) => {
+  //   hasil += `${string} ${expression[i] || ''}`
+  // })
+  // return hasil;
+  
+  // .reduce()
+  return teks.reduce((hasil,string,i) => `${hasil}${string}${expression[i] || ''}`)
+}
+
+const kenalan = tes`Halo semua, perkenalkan nama saya ${nama}
+dan umur saya ${umur} tahun.`;
+
+console.log(kenalan);
+
+// Highlight
+function highlight(kata, ...expression) {
+  return kata.reduce((hasil,string,i) => `${hasil}${string} <span class="hl">${expression[i] || ''}</span>`, '')
+}
+
+const perkenalan = highlight`Hai semua, perkenalkan nama saya ${nama}, 
+umur saya ${umur} tahun,saya sekolah di ${sekolah}.`
+document.writeln(perkenalan);
+  
+  </script>
+</body>
+</html>

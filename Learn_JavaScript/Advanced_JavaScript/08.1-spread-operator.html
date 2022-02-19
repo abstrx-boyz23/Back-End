@@ -1,0 +1,77 @@
+
+<!-- =========== WEB_PROGRAMMING_UNPAS =========== -->
+    <!-- ========= Spread Operator ========== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css" media="all">
+  body {
+    background-color: #af8717;
+    text-align: center;
+  }
+  .nama {
+    color: #e6f3f6;
+    margin-top: 170px;
+    font-size: 30px;
+  }
+  .nama span {
+    display: inline-block;
+    transition: 0.3s;
+  }
+  .nama span:hover {
+    transform: scale(3);
+  }
+  </style>
+</head>
+<body>
+  <!--<ul> -->
+  <!--  <li>Afif</li>-->
+  <!--  <li>Rara</li>-->
+  <!--  <li>Orang Lain</li>-->
+  <!--</ul>-->
+  
+  <h1 class="nama">afifrara</h1>
+
+<script type="text/javascript" charset="utf-8">
+
+// // memecah iterables menjadi single element
+// const people = ['afif','rara'];
+// console.log(...people[1]);
+
+// // menggabung 2 array atau lebih
+// const people = ['afif','rara'];
+// const oranglain = ['oranglain','figuran'];
+// const halo = [1,3,4]
+// const gabung = [...people,'dobleh',...oranglain]; // kata pa Dhika menfing pake ini 
+// // const gabung1 = people.concat('gshsus',oranglain,'hsusj','hsjs',halo);
+// console.log(gabung);
+
+// // meng-copy Array
+// const array1 = ['afif','udin','rara'];
+// // const array2 = array1; // salah, karena array1 jg ikut berubah
+// const array2 = [...array1]; // benar
+// array2[1] = 'chuaxxx';
+// console.log(array1);
+
+// // contoh lain
+// // const listPeople = Array.from(document.querySelectorAll('ul li'));
+// const listPeople = document.querySelectorAll('ul li');
+// const people = [...listPeople].map(a => a.textContent); // untuk mengubah jadi array menggunakan spread operator
+// console.log(people);
+
+// membuat single element pada tag h1
+const nama = document.querySelector('.nama');
+const huruf = [...nama.textContent].map(a => `<span>${a}</span>`).join('');
+console.log(huruf);
+
+nama.innerHTML = huruf;
+
+
+</script>
+</body>
+</html>

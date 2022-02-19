@@ -1,0 +1,16 @@
+{
+  "name": "08-apa-itu-npm",
+  "version": "1.0.0",
+  "description": "Mengenal NPM (NodeJS)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "te": "cd ~",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Afifudin Nurfalah",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Traversal</title>
+    <style type="text/css" media="all">
+    body {
+      margin: 50px;
+      font-family: arial;
+      background-color: #666;
+    }
+    .container {
+      width: 900px;
+      margin: auto;
+    }
+    .container h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .card {
+      display: inline-block;
+      width: 220px;
+      padding: 0 80px;
+      height: 80px;
+      font-size: 16px;
+      line-height: 80px;
+      border-radius: 40px;
+      background-color: #f1f1f1;
+      margin: 20px;
+      position: relative;
+      text-align: center;
+    }
+    .card img {
+      float: left;
+      margin: 0 10px 0 -80px;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      position: relative;
+    }
+    .card .nama, .card .telp {
+      display: block;
+      line-height: 20px;
+      padding: 0 5px;
+    }
+    .card .nama {
+      margin-left: 20px;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .card .telp {
+      margin-left: 20px;
+      margin-top: 5px;
+      font-size: 16px;
+      color: #aaa;
+    }
+    .card .close {
+      font-size: 24px;
+      font-weight: bold;
+      color: #999;
+      position: absolute;
+      top: 0;
+      right: 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .card:hover .close {
+      color: red;
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>My Contact</h1>
+    
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeVkUf4mD14UrlCGtaeqZ9DTNS9LArq1_eQ&usqp=CAU" width="96" height="96">
+      <span class="nama">Contact 1</span>
+      <span class="telp">08123456789</span>
+      <span class="close">×</span>
+    </div> 
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeVkUf4mD14UrlCGtaeqZ9DTNS9LArq1_eQ&usqp=CAU" width="96" height="96">
+      <span class="nama">Contact 2</span>
+      <span class="telp">08123456789</span>
+      <span class="close">×</span>
+    </div>
+    
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeVkUf4mD14UrlCGtaeqZ9DTNS9LArq1_eQ&usqp=CAU" width="96" height="96">
+      <span class="nama">Contact 3</span>
+      <span class="telp">08123456789</span>
+      <a href="" class="close">×</a>
+    </div>
+    
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeVkUf4mD14UrlCGtaeqZ9DTNS9LArq1_eQ&usqp=CAU" width="96" height="96">
+      <span class="nama">Contact 4</span>
+      <span class="telp">08123456789</span>
+      <a href="" class="close">×</a>
+    </div>
+    
+    
+</div>
+
+<script>
+// Method .stopPropagation();
+const close = document.querySelectorAll('.close');
+const cards = document.querySelectorAll('.card');
+close.forEach(cls => {
+  cls.addEventListener('click', e => {
+    e.target.parentElement.remove();
+    e.preventDefault(); // untuk menghentikan aksi defaultnya 
+    e.stopPropagation(); // untuk menghentikan aksi yg diberikan oleh parent element-nya (event bubbling)
+  });
+});
+cards.forEach(card => card.onclick = () => alert('hello'));
+
+/*
+// Contoh Penerapan Event Bubbling
+const container = document.querySelector('.container');
+container.addEventListener('click', event => {
+  if (event.target.classList.contains('close')) {
+    event.target.parentElement.remove();
+    event.preventDefault()
+  }
+});
+*/
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belajar JavaScript & DOM - DOM Manipulation</title>
+  <style type="text/css" media="all">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      max-width: 700px;
+      margin: 30px auto;
+      font-family: Sans-Serif;
+      color: #333;
+      border: 20px solid #c5e9e6;
+      padding: 20px;
+    }
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="headline">Hello World</h1>
+  <div id="container">
+    <section id="a">
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis, quae pariatur eaque dicta atque magnam sint? Perferendis, vel, at.
+      </p>
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, omnis. Sapiente repellat quibusdam tempora minus.
+      </p>
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, tempora.
+      </p>
+    </section>
+    <section id="b">
+      <i><h3>Daftar Produk :</h3></i>
+      <ol>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+      </ol>
+      <a href="https://wa.me/628975836972?text=Hai,%20boleh%20kenalan%20nggak%20">~ Contact Me ~</a>
+    </section>
+    <p name="udin">
+      Hai Samyank !!
+    </p>
+    <p name="udin">
+      Ini juga termasuk paragraf
+    </p>
+    <section class="c">
+      <i><h3>Jadwal Pengiriman : </h3></i>
+      <ul>
+        <li>Senin - Jum'at : 20.10 WIB</li>
+        <li>Sabtu & Minggu : 19.30 WIB</li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    // 1.  Membuat Element Baru Lewat JavaScript
+    const elementBaru = document.createElement('h3'); // membuat element baru tpi blum di isi 
+    const isiElementBaru = document.createTextNode('Monggo Dibaca Selengkapnya !!'); // membuat isi element
+    elementBaru.appendChild(isiElementBaru);
+      // simpan elementBaru di akhir section A
+      const sectionA = document.getElementById('a');
+      sectionA.appendChild(elementBaru);
+    
+    // 2. Jika Ingin Membuat Element dan Simpan Ditengah
+    const itemBaru = document.createElement('li');
+    itemBaru.innerHTML = 'Item Baru';
+    const ol = document.querySelector('section#b ol');
+    const li3 = document.querySelector('section#b ol li:nth-child(3)');
+      // (parent).insertBefore(nodeYgAkanDisisipkan, nodeSesudahnya)
+      ol.insertBefore(itemBaru,li3);
+    
+    // 3. Menghapus Element Lewat JavaScript
+    const p2 = document.getElementsByClassName('p')[1];
+    p2.remove();
+    
+    // 4. Mengganti Element
+    const pBaru = document.createElement('p');
+    pBaru.innerHTML = 'Ini Adalah Uji Coba node.replaceChild() dengan Paragraf Yang Baru.';
+    const p3 = sectionA.querySelector('p:nth-child(2)');
+    sectionA.replaceChild(pBaru,p3);
+    
+  </script>
+</body>
+</html>

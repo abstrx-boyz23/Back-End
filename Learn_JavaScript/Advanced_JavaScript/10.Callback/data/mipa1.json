@@ -1,0 +1,17 @@
+[
+  {
+    "nama": "Afif", 
+    "absen": 2, 
+    "asalSekolah": "SMPN 3 TEGAL"
+  },
+  {
+    "nama": "Eko",
+    "absen": 13,
+    "asalSekolah": "SMPN 1 TEGAL"
+  },
+  {
+    "nama": "Jayen",
+    "absen": 15,
+    "asalSekolah": "SMPN 17 TEGAL"
+  }
+]

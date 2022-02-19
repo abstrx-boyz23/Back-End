@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belajar JavaScript & DOM - DOM Selection</title>
+  <style type="text/css" media="all">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      max-width: 700px;
+      margin: 30px auto;
+      font-family: Sans-Serif;
+      color: #333;
+      border: 20px solid #c5e9e6;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="headline">Hello World</h1>
+  <div id="container">
+    <section id="a">
+      <p class="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis, quae pariatur eaque dicta atque magnam sint? Perferendis, vel, at.</p>
+      <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, omnis. Sapiente repellat quibusdam tempora minus.</p>
+      <p class="p3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, tempora.</p>
+    </section>
+    <section id="b">
+      <i><h3>Daftar Produk :</h3></i>
+      <ol>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+      </ol>
+      <a href="https://wa.me/628975836972?text=Hai,%20boleh%20kenalan%20nggak%20">~ Contact Me ~</a>
+    </section>
+    <p name="udin">Hai Samyank !!</p>
+    <p name="udin">Ini juga termasuk paragraf</p>
+    <section class="c">
+      <i><h3>Jadwal Pengiriman : </h3></i>
+      <ul>
+        <li>Senin - Jum'at : 20.10 WIB</li>
+        <li>Sabtu & Minggu : 19.30 WIB</li>
+      </ul>
+    </section>
+  </div>
+  
+<script type="text/javascript" charset="utf-8">
+  // 1. document.getElementById() => element
+  const headline = document.getElementById('headline');
+  headline.style.color = 'brown';
+  headline.style.backgroundColor = 'lightgreen';
+  headline.innerHTML = 'Web E-Commerce';
+  
+  // 2. document.getElementsByTagName() => HTMLCollection
+  const pAll = document.getElementsByTagName('p');
+  // pAll[1].style.backgroundColor = 'grey';
+  for (let a of pAll) {
+    a.style.backgroundColor = '#ffd1cd';
+  }
+  const tagH1 = document.getElementsByTagName('h1');
+  tagH1[0].style.fontSize = '45px';
+  
+  // 3. document.getElementsByClassName() => HTMLCollection
+  const classP1 = document.getElementsByClassName('p1');
+  classP1[0].innerHTML = 'Ini contoh syntax document.getElementsByClassName() pada class (p1)';
+  
+  // 4. document.getElementsByName(); => NodeList
+  const sayHai = document.getElementsByName('udin');
+  sayHai[0].style.backgroundColor = 'maroon';
+  
+  // 5. document.querySelector() => element
+  const jadwalSeninJumat = document.querySelector('section.c ul li:nth-child(2)');
+  jadwalSeninJumat.style.fontSize = '25px';
+  jadwalSeninJumat.style.color = 'green';
+  
+  // 6. document.querySelectorAll() => NodeList
+  const jadwalPengiriman = document.querySelectorAll('section.c ul li')
+  for (let a of jadwalPengiriman) {
+    a.style.fontFamily = 'Serif'
+  }
+  // Dan Masih Banyak Lagi...
+</script>
+</body>
+</html>

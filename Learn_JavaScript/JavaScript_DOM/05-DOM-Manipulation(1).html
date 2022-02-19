@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belajar JavaScript & DOM - DOM Manipulation</title>
+  <style type="text/css" media="all">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      max-width: 700px;
+      margin: 30px auto;
+      font-family: Sans-Serif;
+      color: #333;
+      border: 20px solid #c5e9e6;
+      padding: 20px;
+    }
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="headline">Hello World</h1>
+  <div id="container">
+    <section id="a">
+      <p class="p1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis, quae pariatur eaque dicta atque magnam sint? Perferendis, vel, at.
+      </p>
+      <p class="p2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, omnis. Sapiente repellat quibusdam tempora minus.
+      </p>
+      <p class="p3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, tempora.
+      </p>
+    </section>
+    <section id="b">
+      <i><h3>Daftar Produk :</h3></i>
+      <ol>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+      </ol>
+      <a href="https://wa.me/628975836972?text=Hai,%20boleh%20kenalan%20nggak%20">~ Contact Me ~</a>
+    </section>
+    <p name="udin">
+      Hai Samyank !!
+    </p>
+    <p name="udin">
+      Ini juga termasuk paragraf
+    </p>
+    <section class="c">
+      <i><h3>Jadwal Pengiriman : </h3></i>
+      <ul>
+        <li>Senin - Jum'at : 20.10 WIB</li>
+        <li>Sabtu & Minggu : 19.30 WIB</li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    // 1. element.innerHTML => Mengubah Isi Teks HTML
+    const judul = document.getElementById('headline');
+    judul.innerHTML = 'Tokonya Afif, Orang Paling Ganteng';
+    
+    // 2. element.style.(property) => Mengubah style pada CSS
+    const listDaftarProduk = document.getElementsByTagName('li');
+    for (let a of listDaftarProduk) {
+      a.style.backgroundColor = 'lightblue';
+    }
+    
+    // 3. element.setAttribute() => membuat satu Attribute pada Element
+    const daftarProduk = document.getElementsByTagName('h3')[0];
+    daftarProduk.style.color = "red";
+    daftarProduk.setAttribute('name', 'daftarProduk');
+    
+    // 4. element.getAttribute() => mengambil Value dari Attribute yang dituju
+    const contactMe = document.getElementsByTagName('a')[0];
+    const linkContactMe = contactMe.getAttribute('href');
+    
+    // 5. element.removeAttribute() => menghapus satu Attribute pada Element
+    // contactMe.removeAttribute('href');
+    
+          // ======== element.classList =========
+        
+    // 6. element.classList.add() => Menambahkan 1 Class 
+    const p2 = document.getElementsByClassName('p2')[0];
+    // p2.setAttribute('class','udin'); // salah
+    p2.classList.add('paragraf2');
+    
+    // 7. element.classList.remove() => Menghapus 1 Class pada Element
+    p2.classList.remove('paragraf2');
+    
+    // 8. element.classList.toggle() => Membuat Class Baru (Bentuk Toogle)
+    document.body.classList.toggle('dark-mode');
+    
+    // 9. element.classList.item() => Mencari nama Class dengan mengetik index-nya
+    p2.classList.add('satu');
+    p2.classList.add('dua');
+    p2.classList.add('tiga');
+    
+    p2.classList.item(0); // p2
+    
+    // 10. element.classList.contains(className) => Menanyakan ada atau tidak Class yg dicari
+    p2.classList.contains('satu'); // true
+    p2.classList.contains('empat'); // false
+    
+    // 11. element.classList.replace(classLama,classBaru) => Mengganti Class yg lama dengan yg baru 
+    p2.classList.replace('satu','empat'); // p2, empat, dua, tiga
+    
+    
+            // ========== Petani Kode ==========
+    
+    // 12. Menambahkan Element HTML Lewat JavaScript (Diluar Topik)
+    let copyright = document.createElement('p');
+    copyright.textContent = '@copyright 2021';
+    document.body.append(copyright);
+    
+    let contoh = document.createElement('p');
+    contoh.textContent = 'contoh';
+    document.body.append(contoh);
+    
+    // 13. Menghapus Element HTML lewat JavaScript (Diluar Topik)
+    contoh.remove();
+  </script>
+</body>
+</html>

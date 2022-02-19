@@ -1,0 +1,94 @@
+
+<!-- ============= WEB_PROGRAMMING_UNPAS ============== -->
+   <!-- ========= Template Literals ========== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<script type="text/javascript" charset="utf-8">
+// 1. Normal
+document.body.innerHTML = '<h1>1. Normal</h1>'; // lebih kuat spesifikasi-nya dan writeln diatasnya, tidak dianggap
+const siswa = {
+  nama : 'Afifudin Nurfalah',
+  kelas : 'Xii Mipa 1'
+};
+const elemen = `<div class="siswa">
+  <h3>${siswa.nama}</h3>
+  <h3>${siswa.kelas}</h3>
+</div>`;
+document.writeln(elemen);
+
+
+// 2. Looping
+document.writeln('<h1>2. Looping</h1>')
+const siswa1 = [
+  {
+    nama : 'Afifudin Nurfalah',
+    absen : 2
+  },
+  {
+    nama : 'Jayen Mada Azhari',
+    absen : 17
+  },
+  {
+    nama : 'Eka Leo Winarso',
+    absen : 12
+  }
+]
+const elemen1 = `<div class="siswa">
+  ${siswa1.map(item => `<ul>
+    <li>Nama :  ${item.nama}</li>
+    <li>No. Absen :  ${item.absen}</li>
+  </ul>`).join('')}
+</div>`
+
+document.writeln(elemen1)
+
+
+// 3. Conditional
+document.writeln('<h1>3. Conditional</h1>')
+const masuk = {
+  akun : 'afifu5881@gmail.com',
+  // cookie : 'sudah login'
+}
+
+const elemen2 = `<div class="masuk">
+<ul>
+  <li>Nama Akun : ${masuk.akun}</li>
+  <li>Apakah anda sudah login ? ${masuk.cookie ? 'Sudah, silahkan masuk !!' : 'Belum, maka anda harus login terlebih dahulu'}</li>
+  
+</ul>
+</div>`
+
+document.writeln(elemen2)
+
+// 4. Nested 
+document.writeln('<h1>4. Nested</h1>')
+const kelas = {
+  namaKelas : 'XII MIPA 1',
+  mapel : ['Informatika','Matematika','Fisika','Kimia','Biologi']
+};
+
+const cetakMapel = mapel => {
+  return `
+  <ol>
+    ${mapel.map(item => `<li>${item}</li>`).join('')}
+  </ol>`
+}
+
+const elemen3 = `<div class="kelas">
+  <h3>Kelas : ${kelas.namaKelas}</h3>
+  <h3>Mapel : ${cetakMapel(kelas.mapel)}</h3>
+</div>`
+
+document.writeln(elemen3)
+
+</script>
+</body>
+</html>

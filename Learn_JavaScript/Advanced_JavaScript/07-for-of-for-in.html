@@ -1,0 +1,67 @@
+
+<!-- =============== WEB_PROGRAMMING_UNPAS ================= -->
+    <!-- ========= For Of and For In ========== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Mapel : </h3>
+  <ol>
+    <li class="mapel">Matematika</li>
+    <li class="mapel">IPA</li>
+    <li class="mapel">B.Inggris</li>
+  </ol>
+  
+<script type="text/javascript" charset="utf-8">
+// Array
+// const mapel = ['Matematika','IPA','B.Inggris'];
+// // .forEach() (Array)
+// mapel.forEach((part,i) => console.log(`${i+1}. ${part}`));
+
+// // for..of + destructuring (Array)
+// for(const [i,part] of mapel.entries()) { // .entries => untuk memunculkan index 
+//   console.log(`${i+1}. ${part}`);
+// }
+
+// // NodeList
+// const listMapel = document.querySelectorAll('.mapel');
+// // .forEach() (NodeList)
+// listMapel.forEach((mpl,i) => /*console.log(mpl.textContent));*/ console.log(`${i+1}. ${mpl.textContent}`));
+
+// // for...of (NodeList)
+// for (const [i,mpl] of listMapel.entries()) {
+//   console.log(`${i+1}. ${mpl.textContent}`);
+// }
+
+// // Arguments
+// function coba() {
+//   // console.log(arguments);
+//   let total = 0; // untuk wadah
+//   for (a of arguments) { // melooping
+//     total += a
+//   }
+//   return total;
+// }
+// console.log(coba(1,2,3,4,5));
+
+// For...In
+const obj = {
+  nama : 'Afifudin Nurfalah',
+  absen : 2,
+  kelas : 'Xii Mipa 1'
+}
+for (a in obj) {
+  console.log(`${a} = ${obj[a]}`)
+}
+// a => untuk mengambil property
+// obj[a] => untuk mengambil value dari property
+
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belajar JavaScript & DOM - DOM Manipulation</title>
+  <style type="text/css" media="all">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      max-width: 700px;
+      margin: 30px auto;
+      font-family: Sans-Serif;
+      color: #333;
+      border: 20px solid #c5e9e6;
+      padding: 20px;
+    }
+    /*section#a p:nth-child(3):active {*/
+    /*  background-color: rgba(12,177,190,.2);*/
+    /*} Active hanya Saat Cursor diatas
+  </style>
+</head>
+<body>
+  <h1 id="headline">Hello World</h1>
+  <div id="container">
+    <section id="a">
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis, quae pariatur eaque dicta atque magnam sint? Perferendis, vel, at.
+      </p>
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, omnis. Sapiente repellat quibusdam tempora minus.
+      </p>
+      <p class="p">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, tempora.
+      </p>
+    </section>
+    <section id="b">
+      <i><h3>Daftar Produk :</h3></i>
+      <ol>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+      </ol>
+      <a href="https://wa.me/628975836972?text=Hai,%20boleh%20kenalan%20nggak%20">~ Contact Me ~</a>
+    </section>
+    <p name="click">
+      Click Me !!
+    </p>
+    <p name="udin1">
+      Ini juga termasuk paragraf
+    </p>
+    <section class="c">
+      <i><h3>Jadwal Pengiriman : </h3></i>
+      <ul>
+        <li>Senin - Jum'at : 20.10 WIB</li>
+        <li>Sabtu & Minggu : 19.30 WIB</li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    // Menangkap Element HTML
+    const p2 = document.querySelector('section#a .p:nth-child(2)');
+    const p3 = document.querySelector('section#a .p:nth-child(3)');
+    const clickMe = document.getElementsByName('click')[0];
+  
+  
+    // // 1. Inline HTML Attribute (Event Handler)
+    //   // <p onclick="alert('Hello')"></p>
+        
+    // // 2. Element Method (Event Handler)
+    // const ubahWarna = () => p2.style.backgroundColor = 'rgba(82,231,27,.6)';
+    // p2.onclick = ubahWarna;
+    
+    // const ubahWarna1 = () => p3.style.backgroundColor = 'rgb(224,134,22)';
+    // p3.onclick = ubahWarna1;
+    
+    // // 3. addEventListener()
+    // clickMe.addEventListener('dblclick',() => {
+    //   const ol = document.querySelector('section#b ol');
+    //   const liBaru = document.createElement('li');
+    //   liBaru.innerHTML = 'Ini List Baru';
+    //   ol.appendChild(liBaru);
+    // })
+    
+    // // Apa Perbdaan antara Element Method dan addEventListener() ??
+    // // 1. Menimpa Vs Tidak Menimpa
+    //   //Event Handler (Menimpa)
+    //   p3.onclick = () => p3.style.backgroundColor = 'salmon';
+    //   p3.onclick = () => p3.style.color = 'blue'; 
+    
+      // addEventListener() (Tidak Menimpa)
+      p3.addEventListener('dblclick',() => p3.style.backgroundColor = 'pink');
+      p3.addEventListener('dblclick',() => p3.style.color = 'red');
+    
+  </script>
+</body>
+</html>
