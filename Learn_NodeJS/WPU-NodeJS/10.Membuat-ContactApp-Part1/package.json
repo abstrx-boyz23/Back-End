@@ -1,0 +1,11 @@
+{
+  "name": "10.membuat-contactapp-part1",
+  "version": "1.0.0",
+  "description": "Praktek membuat ContactApp sederhana dengan NodeJS dan bantuan Core Module + NPM Module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@affdn-nrflh23",
+  "license": "ISC"
+}
