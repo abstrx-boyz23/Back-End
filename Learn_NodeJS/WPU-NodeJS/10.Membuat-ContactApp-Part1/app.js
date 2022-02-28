@@ -4,8 +4,8 @@ let {inputDataContact, simpanDataContacts} = require("./contacts.js");
 
 // Function Utama
 const main = async () => {
-	const nama = await inputDataContact("Masukan nama anda : ");
-	const no = await inputDataContact("Masukan nomor anda : ");
+	const nama = await inputDataContact("Masukan nama kontak anda : ");
+	const no = await inputDataContact("Masukan nomor kontak anda : ");
 	const email = await inputDataContact("Masukan email anda : ");
 	
 	simpanDataContacts(nama, no, email);

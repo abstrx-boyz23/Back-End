@@ -19,7 +19,7 @@ const simpanDataContacts = (nama, no, email) => {
 	const cekData = contacts.find(contact => contact.nama === nama || contact.no === no);
 	
 	if (cekData) {
-		console.log(chalk.white.bgRed`Gagal menyimpan, maaf nama dan nomor contact tidak boleh sama!!\n`);
+		console.log(chalk.white.bgRed`Gagal menyimpan, maaf nama dan nomor kontak tidak boleh sama!!\n`);
 		console.log(contacts, '\n');
 		return false;
 	}

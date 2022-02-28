@@ -10,15 +10,15 @@ console.log(yargs.argv);
 
 yargs.command({
 	command: "add",
-	describe: "Menambahkan contact baru",
+	describe: "Menambahkan kontak baru",
 	builder: {
 		nama: {
-			describe: "Isi nama contact anda (wajib)",
+			describe: "Isi nama kontak anda (wajib)",
 			demandOption: true,
 			type: "string"
 		},
 		no: {
-			describe: "Isi nomor contact anda (wajib)",
+			describe: "Isi nomor kontak anda (wajib)",
 			demandOption: true,
 			type: "string"
 		},
