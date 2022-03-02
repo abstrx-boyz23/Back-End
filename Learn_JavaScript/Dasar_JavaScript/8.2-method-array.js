@@ -1,7 +1,7 @@
 
 // # ============== ARRAY ================ #
 // ■□ ====== Method Pada Array===== □■
-//let nama = ['Afif','Udin','Nur','Falah']
+let nama = ['Afif','Udin','Nur','Falah']
 // // 1. length
 // console.log(nama.length);
 
@@ -22,21 +22,21 @@
 // nama.shift()
 // console.log(nama.join(' • '));
 
-// // 5. splice()
-// // rumus = splice(nilaAwal, mauDihapusBerapa, valueBaru)
-// nama.splice(1,0,'Udin','Nur')
-// console.log(nama.join(' - '));
-// // atau
-// nama.splice(0,2)
-// nama.splice(1,0,'Hello','World')
-// console.log(nama.join(' - '));
+// 5. splice()
+// rumus = splice(nilaAwal, mauDihapusBerapa, valueBaru)
+nama.splice(1,0,'Udin','Nur')
+console.log(nama.join(' - '));
+// atau
+nama.splice(0,2)
+nama.splice(1,0,'Hello','World')
+console.log(nama.join(' - '));
 
-// // 6. Slice()
-// // harus membuat variable baru sehingga variable aslinya masih utuh
-// // rumus : let baru = nama.slice(awal, (akhir dikurangi 1))
-// let nama2 = nama.slice(0,2);
-// console.log(nama.join(' - '));
-// console.log(nama2.join(''));
+// 6. Slice()
+// harus membuat variable baru sehingga variable aslinya masih utuh
+// rumus : let baru = nama.slice(awal, (akhir dikurangi 1))
+let nama2 = nama.slice(0,2);
+console.log(nama.join(' - '));
+console.log(nama2.join(''));
 
 // // 7. forEach() (mirip for loop)
 // let cetak = nama.forEach(function(e ,i ,v) {
@@ -49,7 +49,7 @@
 // }) // map itu mengembalikan nilai array
 // console.log(nama3.join(' • '));
 
-let angka = ['zaxu',9,1,26,4,3,5,7,'adin'];
+// let angka = ['zaxu',9,1,26,4,3,5,7,'adin'];
 // // 9. sort() / mengurutkan
 // console.log(angka.join(' - '));
 // angka.sort()// mngurutkan huruf
@@ -59,10 +59,10 @@ let angka = ['zaxu',9,1,26,4,3,5,7,'adin'];
 // console.log(angka.join(' - '));
 
 // 10. filter (banyak angka)
-let angkaFilter = angka.filter(function(a) {
-  return a >= 5;
-});
-console.log(angkaFilter.join(' - '));
+// let angkaFilter = angka.filter(function(a) {
+//   return a >= 5;
+// });
+// console.log(angkaFilter.join(' - '));
 
 // // 11. find (hanya bisa satu angka)
 // let angkaFind = angka.find(function(a) {
@@ -72,7 +72,7 @@ console.log(angkaFilter.join(' - '));
 
 // <== JavaScript Dasar - PZN ==>
 // 12. .split("") = untuk memisahkan text dan merubah jadi array (khusus string)
-let text = "Hello World";
-console.log(text.split(""));
+// let text = "Hello World";
+// console.log(text.split(""));
 
 
