@@ -1,0 +1,14 @@
+{
+  "name": "14.apa-itu-expressjs",
+  "version": "1.0.0",
+  "description": "Belajar Dasar ExpressJS (Framework NodeJS)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@affdn-nrflh23",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
