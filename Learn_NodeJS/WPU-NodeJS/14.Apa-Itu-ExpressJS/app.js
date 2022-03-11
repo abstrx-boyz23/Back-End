@@ -36,6 +36,10 @@ app.get('/help', (req, res) => {
   res.sendFile("./docs/help.html", {root: __dirname});
 });
 
+// tes.ejs
+
+
+
 // ==== Req ====
 app.get('/products/:id/category/:idCat', (req, res) => {
   res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.params.idCat}`)
@@ -44,6 +48,7 @@ app.get('/products/:id/category/:idCat', (req, res) => {
 app.get('/products/:id', (req, res) => {
   res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`)
 });
+
 app.use("/", (req, res) => {
 	res.status(404);
 	res.send("Page Not Found\n    404")
