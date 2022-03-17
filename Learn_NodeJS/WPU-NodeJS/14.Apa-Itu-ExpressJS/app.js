@@ -4,6 +4,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+let fs = require("fs");
+
 
 // root
 app.get('/', (req, res) => {
@@ -21,7 +23,11 @@ app.get('/apidata', (req, res) => {
   	kls: "12 Mipa 1",
   });
   */
-  res.sendFile("./docs/contacts.json", {root: __dirname});
+  const data = JSON.parse(fs.readFileSync("./docs/contacts.json", "utf-8"));
+  res.json(data);
+  console.log(data);
+  
+  // res.sendFile("./docs/contacts.json", {root: __dirname});
 });
 
 // about
