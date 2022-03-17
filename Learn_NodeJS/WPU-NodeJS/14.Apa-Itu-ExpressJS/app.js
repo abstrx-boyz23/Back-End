@@ -18,7 +18,7 @@ app.get('/apidata', (req, res) => {
   res.send('Hello, this is a page about!!');
   res.json({
   	nama: "Afifudin Nurfalah",
-  	kls: "12 Mipa 1"
+  	kls: "12 Mipa 1",
   });
   */
   res.sendFile("./docs/contacts.json", {root: __dirname});
@@ -36,24 +36,27 @@ app.get('/help', (req, res) => {
   res.sendFile("./docs/help.html", {root: __dirname});
 });
 
-// tes.ejs
-
-
-
 // ==== Req ====
-app.get('/products/:id/category/:idCat', (req, res) => {
-  res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.params.idCat}`)
-});
+// Query
+
+// app.get('/products/:id', (req, res) => {
+//   res.send(`Product ID : ${req.params.id}`)
+// });
+
+// app.get('/products/:id/category/:idCat', (req, res) => {
+//   res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.params.idCat}`);
+// });
 
 app.get('/products/:id', (req, res) => {
-  res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`)
-});
+  res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`);
+}); // cara manggilnya /products/23?category=shoes
+
 
 app.use("/", (req, res) => {
 	res.status(404);
-	res.send("Page Not Found\n    404")
+	res.send("Page Not Found\n 404")
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}...`);
 });
