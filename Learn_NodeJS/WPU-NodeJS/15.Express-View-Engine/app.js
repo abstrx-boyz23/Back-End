@@ -10,29 +10,23 @@ const expressLayouts = require("express-ejs-layouts");
 const fs = require("fs");
 
 
+const data = JSON.parse(fs.readFileSync("./products.json", "utf-8"));
 // Aktifkan EJS-nya
 app.set("view engine", "ejs");
 app.use(expressLayouts);
-
-const siswa = [
-	{ nama: "Afifudin Nurfalah", no: "02" },
-	{ nama: "Eka Leo Winarso", no: "12" },
-	{ nama: "Giyant Mada Azhari", no: "16"}
-];
 
 // root
 app.get('/', (req, res) => {
   res.render("index", {
   	title: "Home Page", 
   	maker: "Created by handsome boy from Ipa 1",
-  	siswa,
+  	data,
   	layout: "main-layout"
   });
 });
 
 // apidata
 app.get('/apidata', (req, res) => {
-	const data = JSON.parse(fs.readFileSync("./contacts.json", "utf-8"));
 	res.json(data);
 });
 
@@ -60,7 +54,7 @@ app.get('/help', (req, res) => {
 // });
 // app.get('/products/:id/category/:idCat', (req, res) => {
 //   res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.params.idCat}`);
-// });
+// }); // cara manggilnya /products/23/category/sepatu
 
 // Query
 app.get('/products/:id', (req, res) => {

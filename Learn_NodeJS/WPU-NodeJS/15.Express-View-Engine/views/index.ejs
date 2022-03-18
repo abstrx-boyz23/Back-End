@@ -5,14 +5,14 @@
 	
 	<!-- Daftar Siswa -->
 	<div class="daftar-siswa">
-		<h2>Daftar Siswa XII Ipa 1 : </h2>
-		<ol>
-			<% if(siswa.length === 0) { %>
-				<p><<< File Kosong >>></p>
-			<% } else { %>
-				<% siswa.forEach(sw => { %>
-					<li>Nama = <%= sw.nama %>. <br /> No = <%= sw.no%>.</li>
+		<h2>Daftar Produk : </h2>
+		<% if(data.length === 0) { %>
+			<p><<< Produk Kosong >>></p>
+		<% } else { %>
+			<ol>
+				<% data.forEach(produk => { %>
+					<h5><li>Produk = <%= produk.nama %>, <br /> Harga = Rp.<%= produk.harga %>,00</li></h5>
 				<% }) %>
-			<% } %>
-		</ol>
+			</ol>
+		<% } %>
 	</div>
