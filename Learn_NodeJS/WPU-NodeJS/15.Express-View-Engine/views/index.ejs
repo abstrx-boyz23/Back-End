@@ -1,0 +1,18 @@
+	<% const nama = "AFIFUDIN"; %>
+	<h1>WELCOME TO EXPRESSJS, <%= nama %> !!</h1>
+	<h5><%= maker %></h5>
+	<h3>How to Make Web Server with ExpressJS</h3>
+	
+	<!-- Daftar Siswa -->
+	<div class="daftar-siswa">
+		<h2>Daftar Siswa XII Ipa 1 : </h2>
+		<ol>
+			<% if(siswa.length === 0) { %>
+				<p><<< File Kosong >>></p>
+			<% } else { %>
+				<% siswa.forEach(sw => { %>
+					<li>Nama = <%= sw.nama %>. <br /> No = <%= sw.no%>.</li>
+				<% }) %>
+			<% } %>
+		</ol>
+	</div>

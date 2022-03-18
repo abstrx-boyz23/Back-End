@@ -1,0 +1,11 @@
+{
+  "name": "13.nodejs-web-server",
+  "version": "1.0.0",
+  "description": "Membuat Web Server dengan NodeJS ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@affdn-nrflh23",
+  "license": "ISC"
+}
