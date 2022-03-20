@@ -1,5 +1,5 @@
 {
-  "name": "10.membuat-contactapp-part1",
+  "name": "11.membuat-contactapp-part2",
   "version": "1.0.0",
   "description": "Praktek membuat ContactApp sederhana dengan NodeJS dan bantuan Core Module + NPM Module",
   "main": "app.js",
@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@affdn-nrflh23",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.7.0",
+    "yargs": "^17.3.1"
+  }
 }
