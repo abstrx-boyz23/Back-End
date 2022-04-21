@@ -15,7 +15,7 @@ class XIIMipa1 {
   }
 }
 
-// module.exports = sayHello; // cara salah
+// module.exports = sayHello; // cara lama
 module.exports = {sayHello, rara, XIIMipa1};
 
 

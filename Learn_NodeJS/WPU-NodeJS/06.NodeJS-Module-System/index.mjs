@@ -6,7 +6,7 @@
 
 // ==== Import Module ====
 // const coba = require("./coba");
-import coba from "./coba";
+import coba from "./coba.js";
 
 // class XIIMipa1
 const adhe = new coba.XIIMipa1("Adhe Maya", 1);
