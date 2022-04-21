@@ -4,7 +4,9 @@
 // const coba = require("./coba"); Local Module
 // const momment = require("momment"); // Third Party / NPM Module / node_modules
 
-const coba = require("./coba");
+// ==== Import Module ====
+// const coba = require("./coba");
+import coba from "./coba";
 
 // class XIIMipa1
 const adhe = new coba.XIIMipa1("Adhe Maya", 1);
