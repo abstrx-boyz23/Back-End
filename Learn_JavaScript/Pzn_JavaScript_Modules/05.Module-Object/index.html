@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="hello.js" type="text/javascript" charset="utf-8"></script>
+	<script src="tes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="script.mjs" type="module" charset="utf-8"></script>
+</head>
+<body>
+	<script type="module" charset="utf-8">
+		import * as script from "./script.mjs";
+		// * untuk mempersingkat import module object
+		
+		
+		console.log(script.friend);
+		console.log(script.city);
+		script.test();
+		script.yes();
+		script.hello();
+		const a = new script.Person();
+		console.log(a);
+		const b = new script.Orang();
+		console.log(b);
+	</script>
+	
+	<!-- Notes : tetap yang dijalankan yang type text terlebih dahulu -->
+	<script type="text/javascript" charset="utf-8">
+		console.log(name);
+		console.log(age);
+		const a = 1
+		console.log(a);
+	</script>
+</body>
+</html>
+
+<!--
+Kesimpulan : 
+Tetap ada bedanya antara file JavaScript type Text dengan JavaScript type Module
+-->
+
+
+

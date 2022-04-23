@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Export dan Import Default</title>
+	<script src="script.mjs" type="module" charset="utf-8"></script>
+</head>
+<body>
+	<script type="module" charset="utf-8">
+		import sayHello, {sayGoodBye} from "./script.mjs";
+		// import {default as sayHim, sayGoodBye} from "./script.mjs"; // Use alias for default
+		
+		sayHim("Afif");
+		sayGoodBye("Afif");
+	</script>
+</body>
+</html>
