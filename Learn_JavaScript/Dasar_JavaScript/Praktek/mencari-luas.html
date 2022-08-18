@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mencari luas segi empat</title>
+</head>
+<body>
+	<form name="data">
+		<h1 style="number-align:center">Menghitung Luas Segi 4</h1>
+		<p>Panjang : <input type="number" name="panjang" /></p>
+		<p>Lebar : <input type="number" id="lebar" /></p>
+		<p>Bangun :
+	 		<input type="radio" id="persegi" name="bangun"/><label for="persegi">Persegi</label>
+			<input type="radio" id="segipanjang" name="bangun"/><label for="segipanjang">Persegi Panjang</label>
+		</p>
+		<p>Warna :
+			<input type="checkbox" name="warna" id="Merah" /><label for="Merah">Merah</label>
+			<input type="checkbox" name="warna" id="Hijau" /><label for="Hijau">Hijau</label>
+			<input type="checkbox" name="warna" id="Biru" /><label for="Biru">Biru</label>
+		</p>
+		<p>Komen :
+			<textarea name="komen" rows="8" cols="35"></textarea>
+		</p>
+		
+		<hr />
+		<h2>Output</h2>
+		<p>Hasil : <input type="number" name="hasil" /></p>
+		<p>Bangun <span class="output-bangun"></span></p>
+		<p>Warna <span class="output-warna"></span></p>
+		<p>Komen :
+			<textarea name="komen" rows="8" cols="35"></textarea>
+		</p>
+		
+		<input type="button" value="Running" id="btn-run" style="background-color: green;color: white"/>
+		<input type="reset" value="Reset" id="btn-reset" style="background-color: red;color: white" />
+	</form>
+
+
+<script type="text/javascript" charset="utf-8">
+	const btnRun = document.getElementById('btn-run');
+	const btnReset = document.getElementById('btn-reset');
+	
+	function running() {
+		const panjang = parseFloat(document.data.panjang.value);
+		const lebar = parseFloat(document.data.lebar.value);
+		const outputBangun = document.getElementsByClassName('output-bangun')[0];
+		const warna = document.getElementsByName('warna');
+		const outputWarna = document.getElementsByClassName('output-warna')[0];
+		
+		if (isNaN(panjang) || isNaN(lebar) || !data.persegi.checked && !data.segipanjang.checked) {alert("Data belum lengkap!"); return;}
+		// Hasil
+		alert(`Hasilnya adalah ${panjang * lebar}`);
+		document.data.hasil.value = parseFloat(panjang * lebar);
+		
+		// Bangun
+		if (data.persegi.checked) outputBangun.innerHTML = '<span style="font-weight:bold; text-decoration:underlined">Persegi</span>';
+		if (data.segipanjang.checked) outputBangun.innerHTML = '<span style="font-weight:bold; text-decoration:underlined">Persegi Panjang</span>';
+		
+		// Warna
+		let cek = [];
+		for (let i = 0; i < warna.length; i++) {
+			if (warna[i].checked) {
+				cek.push(warna[i].id);
+			}
+		}
+		if (cek.length === 3) outputWarna.innerHTML = `<span style="font-weight:bold; text-decoration:underlined">${cek[0]}, ${cek[1]} & ${cek[2]}</span>`;
+		if (cek.length === 2) outputWarna.innerHTML = `<span style="font-weight:bold; text-decoration:underlined">${cek[0]} & ${cek[1]}</span>`;
+		if (cek.length === 1) outputWarna.innerHTML = `<span style="font-weight:bold; text-decoration:underlined">${cek[0]}</span>`;
+		
+		// Komen
+		document.data.komen[1].value = document.data.komen[0].value;
+	}
+	function resetting() {
+		document.getElementsByClassName('output-bangun')[0].innerHTML = "" // Reset output bangun
+		document.getElementsByClassName('output-warna')[0].innerHTML = "" // Reset output warna
+	}
+	
+	btnRun.addEventListener("click", running);
+	btnReset.addEventListener("click",resetting);
+</script>
+</body>
+</html>
