@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/",(req,res,next) => {
 	res.status(200).json({
 		message: "Get Method Siswa"
-	})
+	});
 });
 
 router.get("/:absen",(req,res,next) => {
@@ -33,7 +33,7 @@ router.post("/",(req,res,next) => {
 	res.status(200).json({
 		message: "Post Method Siswa",
 		data: data1
-	})
+	});
 });
 
 // Put Method

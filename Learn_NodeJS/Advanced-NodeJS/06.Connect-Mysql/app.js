@@ -20,12 +20,12 @@ app.use((res,req,next) => {
 });
 
 app.use((error,req,res,next) => {
-	res.status(error.status || 500)
+	res.status(error.status || 500);
 	res.json({
 		error: {
 			message: error.message
 		}
-	})
+	});
 });
 
 module.exports = {app};

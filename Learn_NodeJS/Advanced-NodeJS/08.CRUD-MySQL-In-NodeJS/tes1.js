@@ -12,7 +12,7 @@ db.connect(err => {
 	console.log("Connection Successfully");
 });
 
-const queryGet = `START TRANSACTION; UPDATE xii_ipa1 SET Nama="tes1" Hobi="tes1" WHERE No=6; INSERT INTO xii_ipa1 VALUES (7, "tes2", "tes2"); COMMIT;`;
+const queryGet = `START TRANSACTION; UPDATE xii_ipa1 SET Nama="tes1" Hobi="tes1" WHERE No=3; INSERT INTO xii_ipa1 VALUES (4, "tes2", "tes2"); COMMIT;`;
 db.query(queryGet, (err,result) => {
 	if (err) throw err;
 	console.log(result);

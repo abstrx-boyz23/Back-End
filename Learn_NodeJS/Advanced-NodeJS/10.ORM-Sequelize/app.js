@@ -13,19 +13,19 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use("/xii_ipa1", xii_ipa1Routes.router);
 
-app.use((res,req,next) => {
+app.use("/",(res,req,next) => {
 	const error = new Error("File Not Found");
 	error .status = 404;
 	next(error);
 });
 
 app.use((error,req,res,next) => {
-	res.status(error.status || 500)
+	res.status(error.status || 500);
 	res.json({
 		error: {
 			message: error.message
 		}
-	})
+	});
 });
 
 module.exports = {app};

@@ -1,5 +1,4 @@
 // May, 15 2022
-
 let mysql = require("mysql");
 
 const db = mysql.createConnection({

@@ -5,7 +5,8 @@ const db = require("../database/mysql");
 const xii_ipa1 = db.define("xii_ipa1", {
 	no: Sequelize.INTEGER,
 	nama: Sequelize.STRING,
-	hobi: Sequelize.STRING
+	hobi: Sequelize.STRING,
+	alamat: Sequelize.STRING,
 }, 
 {
 	freezeTableName: true,

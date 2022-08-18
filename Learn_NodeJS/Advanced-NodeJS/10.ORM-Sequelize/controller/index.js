@@ -1,6 +1,4 @@
 // May, 16 2022
 const xii_ipa1 = require("./xii_ipa1");
 
-const controller = {};
-controller.xii_ipa1 = xii_ipa1;
-module.exports = controller;
+module.exports = {xii_ipa1};

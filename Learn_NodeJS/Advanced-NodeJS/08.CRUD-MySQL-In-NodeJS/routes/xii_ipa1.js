@@ -16,8 +16,8 @@ router.get("/",(req,res,next) => {
 });
 
 router.get("/search",(req,res,next) => {
-	const no = req.query.no;
-	const queryGet = `SELECT * FROM xii_ipa1 WHERE no=${no}`;
+	const no = req.query.no; // Mencari Req Query => http://localhost:3000/xii_ipa1/search?no=1
+	const queryGet = `SELECT * FROM xii_ipa1 WHERE No=${no}`;
 	db.query(queryGet, (err, result) => {
 		if (err) throw err;
 		res.status(200).json({
@@ -33,35 +33,37 @@ router.post("/:no",(req,res,next) => {
 	const hobi = req.body.hobi;
 	const no = req.params.no;
 	
-	const queryPost = `INSERT INTO xii_ipa1 VALUES (${no}, "${nama}", "${hobi}")`
+	const queryPost = `INSERT INTO xii_ipa1 VALUES (${no}, "${nama}", "${hobi}")`;
 	db.query(queryPost, (err, result) => {
 		if (err) throw err;
 		res.status(200).json({
 			message: "Post Method Siswa Successfully",
-			data: {
-				nama: nama,
-				hobi: hobi
-			}
+			data: {nama,hobi}
 		});
 	});
 });
 
 // Put Method
 router.put("/:no", (req, res, next) => {
-	const namaBaru = req.body.nama;
-	const hobiBaru = req.body.hobi;
+	const nama = req.body.nama;
+	const hobi = req.body.hobi;
 	const no = req.params.no;
 	
 	let queryPut;
 	// Condition queryPut
-	if (namaBaru && hobiBaru) queryPut = `UPDATE xii_ipa1 SET nama="${namaBaru}", hobi="${hobiBaru}" WHERE no=${no};`;
-	if (namaBaru) queryPut = `UPDATE xii_ipa1 SET nama="${namaBaru}" WHERE no=${no};`;
-	if (hobiBaru) queryPut = `UPDATE xii_ipa1 SET hobi="${hobiBaru}" WHERE no=${no};`;
+	if (nama && hobi) {
+		queryPut = `UPDATE xii_ipa1 SET nama="${nama}", hobi="${hobi}" WHERE no=${no}`;
+	} else if (nama) {
+		queryPut = `UPDATE xii_ipa1 SET nama="${nama}" WHERE no=${no}`;
+	} else if (hobi) {
+		queryPut = `UPDATE xii_ipa1 SET hobi="${hobi}" WHERE no=${no}`;
+	}
 	
 	db.query(queryPut, (err,result) => {
 		if (err) throw err;
 		res.status(200).json({
-			message: `Put Method Siswa No.${no} Successfully`
+			message: `Put Method Siswa No.${no} Successfully`,
+			newData: {nama, hobi}
 		});
 	});
 });

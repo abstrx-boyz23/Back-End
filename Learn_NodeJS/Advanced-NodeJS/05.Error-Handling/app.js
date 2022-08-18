@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use("/xii_ipa1", siswaRoutes.router);
 
+
 app.use((res,req,next) => {
 	var error = new Error("File Not Found");
 	error .status = 404;

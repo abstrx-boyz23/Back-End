@@ -12,8 +12,8 @@ router.get("/",(req,res,next) => {
 		res.status(200).json({
 			message: "Get Method Siswa",
 			data: result
-		})
-	})
+		});
+	});
 });
 
 router.get("/:no",(req,res,next) => {
@@ -24,8 +24,8 @@ router.get("/:no",(req,res,next) => {
 		res.status(200).json({
 			message: `Get Method Successfully, No.${no} Has Been Found`,
 			data: result[0]
-		})
-	})
+		});
+	});
 });
 
 // Post Method
@@ -37,7 +37,7 @@ router.post("/",(req,res,next) => {
 	res.status(200).json({
 		message: "Post Method Siswa",
 		data: data1
-	})
+	});
 });
 
 // Put Method
