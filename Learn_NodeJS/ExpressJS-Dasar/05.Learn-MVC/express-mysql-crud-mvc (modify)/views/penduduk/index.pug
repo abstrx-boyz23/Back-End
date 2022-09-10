@@ -1,0 +1,21 @@
+html
+    head
+        title Welcome to Data Penduduk
+    body
+        a(href="http://localhost:3000/penduduk/create") Tambah Penduduk
+        table
+            tr
+                td NIP
+                td Nama
+                td Pekerjaan
+                td Aksi
+                td 
+            for data, i in result
+                tr
+                    td #{data.nip}
+                    td #{data.nama}
+                    td #{data.pekerjaan}
+                    td
+                        form(action=`/penduduk/${data.nip}?_method=DELETE`, method="post")
+                            input(type="submit", value="Hapus")
+                            a(href=`/penduduk/edit/${data.nip}`) Ubah

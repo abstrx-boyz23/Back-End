@@ -1,0 +1,68 @@
+Router
+
+router.get("/create", biodataController.create)
+router.post("/", biodataController.store)
+router.get("/:id/edit", biodataController.edit)
+router.put("/:id", biodataController.update)
+router.delete("/:id", biodataController.destroy)
+
+Controller
+
+ create: function(req, res) {
+    res.render("penduduk/create");
+  },
+
+  store: function(req, res) {
+    Penduduk.create(req.con, req.body, function(err) {
+      if (err) throw err;
+      res.redirect("/penduduk");
+    });
+  },
+
+  edit: function(req, res) {
+    Penduduk.getById(req.con, req.params.id, function(err, rows) {
+      if (err) throw err;
+      res.render("penduduk/edit", { data: rows[0] });
+    });
+  },
+
+  update: function(req, res) {
+    Penduduk.update(req.con, req.body, req.params.id, function(err) {
+      res.redirect("/penduduk");
+    });
+  },
+
+  destroy: function(req, res) {
+    Penduduk.destroy(req.con, req.params.id, function(err) {
+      res.redirect("/penduduk");
+    });
+  }
+  
+MODEL
+
+getById: function(con, id, callback) {
+    con.query(`SELECT * FROM biodata WHERE id_biodata = ${id}`, callback)
+  },
+
+  create: function(con, data, callback) {
+    con.query(
+      `INSERT INTO biodata SET 
+      nama = '${data.nama}', 
+      alamat = '${data.alamat}'`,
+      callback
+    )
+  },
+
+  update: function(con, data, id, callback) {
+    con.query(
+      `UPDATE biodata SET 
+      nama = '${data.nama}', 
+      alamat = '${data.alamat}' 
+      WHERE id_biodata = ${id}`,
+      callback
+    )
+  },
+
+  destroy: function(con, id, callback) {
+    con.query(`DELETE FROM biodata WHERE id_biodata = ${id}`, callback)
+  }

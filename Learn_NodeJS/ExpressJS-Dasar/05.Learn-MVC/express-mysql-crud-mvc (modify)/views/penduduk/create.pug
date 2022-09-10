@@ -1,0 +1,15 @@
+html
+    head
+        title Tambah Penduduk
+    body
+        form(action="/penduduk" method="post")
+            label NIP
+                input(type="text" name="nip")
+                br
+            label Nama
+                input(type="text" name="nama")
+                br
+            label Pekerjaan
+                input(type="text" name="pekerjaan")
+                br
+            input(type="submit" value="simpan")

@@ -1,0 +1,12 @@
+html
+    head
+        title Ubah Data Penduduk
+    body
+        form(action=`/penduduk/${result.nip}?_method=PUT` method="post")
+            label Nama
+                input(type="text" name="nama" value=result.nama)
+                br
+            label Pekerjaan
+                input(type="text" name="pekerjaan" value=result.pekerjaan)
+                br
+            input(type="submit" value="simpan")
