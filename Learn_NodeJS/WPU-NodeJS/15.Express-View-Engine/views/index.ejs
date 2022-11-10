@@ -8,7 +8,7 @@
 		<h2>Daftar Produk : </h2>
 		<% if(data.length === 0) { %>
 			<p><<< Produk Kosong >>></p>
-		<% } else { %>
+		<% }     else { %>
 			<ol>
 				<% data.forEach(produk => { %>
 					<h5><li>Produk = <%= produk.nama %>, <br /> Harga = Rp.<%= produk.harga %>,00</li></h5>
