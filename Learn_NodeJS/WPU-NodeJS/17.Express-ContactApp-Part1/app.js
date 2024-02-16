@@ -37,12 +37,12 @@ app.use(morgan("dev"))
 
 // root
 app.get('/', (req, res) => {
-  res.render("index", {
-  	title: "Home Page", 
-  	maker: "Created by handsome boy from Ipa 1",
-  	data,
-  	layout: "main-layout"
-  });
+	res.render("index", {
+		title: "Home Page", 
+		maker: "Created by handsome boy from Ipa 1",
+		data,
+		layout: "main-layout"
+	});
 });
 
 // apidata
@@ -52,18 +52,18 @@ app.get('/apidata', (req, res) => {
 
 // about
 app.get('/about', (req, res) => {
-  res.render("about", { 
-  	title: "About Page",
-  	layout: "main-layout"
-  });
+	res.render("about", { 
+		title: "About Page",
+		layout: "main-layout"
+	});
 });
 
 // help
 app.get('/help', (req, res) => {
-  res.render("help", { 
-  	title: "Help Page",
-  	layout: "main-layout"
-  });
+	res.render("help", { 
+		title: "Help Page",
+		layout: "main-layout"
+	});
 });
 
 // ==== Req ====
@@ -78,7 +78,7 @@ app.get('/help', (req, res) => {
 
 // Query
 app.get('/products/:id', (req, res) => {
-  res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`);
+	res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`);
 }); // cara manggilnya /products/23?category=shoes
 
 app.use("/", (req, res) => {
@@ -87,5 +87,5 @@ app.use("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}...`);
+	console.log(`Example app listening on port ${port}...`);
 });
