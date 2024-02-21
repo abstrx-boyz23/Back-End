@@ -1,71 +1,70 @@
-// ExpressJS Template-Engine (pakai EJS)
-// author @affdn-nrflh23 | Mon, March 14 2022
+// Practice Basic ExpressJS
+// author @affdn-nrflh23 | Wed, March 9 2022
 
-const express = require('express');
+import express from "express";
+import expressLayouts from "express-ejs-layouts";
 const app = express();
 const port = 3000;
 
-// expressLayouts hanya mempermudah EJS
-const expressLayouts = require("express-ejs-layouts");
-const fs = require("fs");
-
-
-const data = JSON.parse(fs.readFileSync("./products.json", "utf-8"));
-// Aktifkan EJS-nya
-app.set("view engine", "ejs");
+app.use(express.static("public"));
 app.use(expressLayouts);
+// Gunakan EJS
+app.set("view engine", "ejs");
 
 // root
-app.get('/', (req, res) => {
-	res.render("index", {
-		title: "Home Page", 
-		maker: "Created by handsome boy from Ipa 1",
-		data,
-		layout: "main-layout"
-	});
-});
-
-// apidata
-app.get('/apidata', (req, res) => {
-	res.json(data);
+app.get('/', (_, res) => {
+    res.render("index", {
+        title: "Home", 
+        name: "AFIF & RARA",
+        layout: "main"
+    });
 });
 
 // about
-app.get('/about', (req, res) => {
-	res.render("about", { 
-		title: "About Page",
-		layout: "main-layout"
-	});
+app.get('/about', (_, res) => {
+    res.render("about", {
+        title: "About",
+        layout: "main"
+    });
 });
 
 // help
-app.get('/help', (req, res) => {
-	res.render("help", { 
-		title: "Help Page",
-		layout: "main-layout"
-	});
+app.get('/help', (_, res) => {
+    res.render("help", {
+        title: "Help",
+        layout: "main"
+    })
 });
 
-// ==== Req ====
+// contact
+app.get('/contact', (_, res) => {
+    fetch("http://localhost:3000/contacts.json")
+        .then(result => result.json())
+        .then(data => {
+            
+            res.render("contact", {
+                title: "Contact",
+                layout: "main",
+                data
+            })
+        });
+});
 
-// Params
-// app.get('/products/:id', (req, res) => {
-//   res.send(`Product ID : ${req.params.id}`)
-// });
-// app.get('/products/:id/category/:idCat', (req, res) => {
-//   res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.params.idCat}`);
-// }); // cara manggilnya /products/23/category/sepatu
-
-// Query
+// product
 app.get('/products/:id', (req, res) => {
-	res.send(`Product ID : ${req.params.id} <br /> Category ID : ${req.query.category}`);
-}); // cara manggilnya /products/23?category=shoes
+    res.render("product", {
+        title: "Product",
+        layout: "main",
+        req
+    })
+});
 
-app.use("/", (req, res) => {
-	res.status(404);
-	res.send("Page Not Found\n 404")
+
+app.use("/", (_, res) => {
+    res.status(404);
+    res.send("Page Not Found\n 404");
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}...`);
+    console.log(`App listening on http://localhost:${port}`);
 });

@@ -6,14 +6,13 @@ const app = express();
 const port = 3000;
 let fs = require("fs");
 
-
 // root
 app.get('/', (req, res) => {
   // res.send('Welcome to ExpressJS, Afif!!');
   res.sendFile('./docs/index.html', {root: __dirname});
   
 });
-
+res.render
 // apidata
 app.get('/apidata', (req, res) => {
   /*

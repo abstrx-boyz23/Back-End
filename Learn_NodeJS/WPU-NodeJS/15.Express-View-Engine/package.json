@@ -1,15 +1,16 @@
 {
   "name": "15.express-view-engine",
   "version": "1.0.0",
-  "description": "Belajar Materi Baru : View Engine Milik ExpressJS",
+  "description": "Belajar Dasar ExpressJS (Framework NodeJS)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "@affdn-nrflh23",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.9",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1"
   }
