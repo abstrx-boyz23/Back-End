@@ -29,7 +29,6 @@ app.use(flash());
 
 // root
 app.get("/", (_, res) => {
-    
     res.render("index", {
         title: "Home", 
         layout: "layouts/main"
